@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "azurek8scluster-e270"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "azurek8scluster-e270"
+  template:
+    metadata:
+      labels:
+        app: "azurek8scluster-e270"
+    spec:
+      containers:
+        - name: "azurek8scluster-e270"
+          image: "appsecsimpledemo.azurecr.io/azurek8scluster"
+          ports:
+          - containerPort: 3000
